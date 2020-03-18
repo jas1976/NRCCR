@@ -1,2 +1,2 @@
-# NCRC
-NC Race-car site
+# NRCCR
+Newcastle RC Car Racers Website
