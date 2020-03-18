@@ -1,0 +1,39 @@
+Events: Need to improve this page pretty bland - plus would be good to get the data from a database table and to have a proper calendar component not my hacky table - I think the following are useful:
+		https://stackoverflow.com/questions/36436738/how-to-use-fullcalendar-within-angular-2
+		https://github.com/nekken/ng2-fullcalendar
+		https://www.npmjs.com/package/ng-fullcalendar
+		https://stackblitz.com/edit/ng-fullcalendar-demo?file=styles.css
+
+Notification Bell: To only appear on the first page not all others or to go white on them where the icon overlaps with the 'lozenge'
+
+Championship: *** CAT-3 need to be able to click a round to get the summary of the qualifying results and the final results etc. plus the 150 total - see:
+               " http://www.newcastlercracers.uk/bbk/mtg14/heatrndsum.htm - nothing for this
+               " http://www.newcastlercracers.uk/bbk/mtg14/f2r0.htm - nothing for this
+              http://www.newcastlercracers.uk/bbk/mtg14/f2r2.htm - we have a table for this (probably don't need bar a link and deep link into Race Results)
+              http://www.newcastlercracers.uk/bbk/mtg14/f2r1.htm - we have a table for this (probably don't need bar a link and deep link into Race Results)
+              OR... better still add a qualifying summary and finals summary to the race Results too in the "Race" end drop down that shows this data
+              Plus need to do the 150 i.e. if Qual 1st = 50 + if A1 1st 50 + if A2 1st 50 = 150 - lose a point per slot back...
+              *** (CAT-3) Could we do a 'modal' style window for this...it appears on clicking anything in that round's column?
+              Need to get the After to update automatically using the DB to get details...
+
+Race Results: **** CAT-1!!! I've added a pick another season to the bottom and anchored it under the graph (may not work on mobile mind) BUT need to
+              ensure that changing the value clears the page and provides alternate gets i.e. summer db not spring db - help...!
+              Need to make the drop downs more attractive some padding around the entries in the drop downs
+              selecting a crop down to the left doesn't update the page - you must change last drop down to activate a change
+              *** CAT-2 the date order doesn't work on the middle one i.e. not chronological
+              *** CAT-2 need to order the plot by the race winner at top
+              *** CAT-1: bug noticed whereby sometimes graph doesn't populated right (but data is in DB) e.g. 4wd -> 19/02 -> H2 - Gary has 20 laps in the data (which looks clean)
+              CAT-2: related see on 4wd -> 09/04 -> F1 - for me - I only did 2 laps but the best lap is a crazy number like when the thing fails above......
+
+Cars and Setups: Need to check the way I've dropped it into tables to make sure it will work on a mobile, narrow view too...
+                 I need to populate it out further...
+
+Video: Need a 'video gallery' so that the choice of videos in future can play instead of the default welcome video...
+
+Contact Us: Need to loop to key people and be clear who the board is PLUS need to embed facebook in some way
+
+Loading Scripts: Need more testing of the loading scripts and need to workout how to move to a new series - i.e. post Spring 2018?
+
+General SPA Behaviour: need to find out why sometimes it drops the icons / images and changes the font on the left hand nav....?
+
+Contact Us - New Page: can we link to the Facebook page?  Can we embed the latest postings on here in some way?

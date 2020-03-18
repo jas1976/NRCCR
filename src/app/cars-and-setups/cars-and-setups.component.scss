@@ -1,0 +1,27 @@
+.map-border { border-width: 10px 12px 0px; border-color: transparent; border-style: solid; }
+.lozenge-color {background-color: rgb(66,66,66)}
+.PhillsLogoImgSize {
+    width: 277px;
+    height: 125px;
+}
+.TyresImgSize {
+    width: 112px;
+    height: auto;
+}
+.TcGenericSize {
+    width: 200px;
+    height: auto;
+}
+.TcGenericSizeSmall {
+    width: 120px;
+    height: auto;
+}
+.column1 {
+    float: left;
+    width: 25%;
+}
+.column2 {
+    float: left;
+    max-width: 75%;
+    min-width: 25%;
+}

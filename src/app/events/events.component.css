@@ -1,0 +1,53 @@
+.lozenge-color {background-color: rgb(66,66,66)}
+.card-height {max-height: 304px}
+
+.text-header {
+  color: rgb(255,255,255);
+}
+
+video.bgvid {
+    min-width: 100%;
+    width: 100%;
+    object-fit: fill;
+    z-index: 0;
+    background-color: #000;
+    display: none;
+  }
+
+.table thead th:nth-child(odd) {
+    border-bottom-width: 3px;
+    border-bottom-color: #f9f9f9;
+    column-width: 90px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+}
+.table thead th:nth-child(even) {
+    border-bottom-width: 3px;
+    border-bottom-color: #f9f9f9;
+    column-width: 90px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+}
+.table tbody td:nth-child(odd) {
+  border-top-width: 2px;
+  border-top-color: #f9f9f9;
+  column-width: 25px;
+  max-width: 25px;
+  min-width: 25px;
+  text-align: right;
+  font-size: 16px;
+  font-weight: 400;
+}
+.table tbody td:nth-child(even) {
+  border-top-width: 2px;
+  border-top-color: #f9f9f9;
+  border-left-width: 2px;
+  border-left-color: #f9f9f9;
+  column-width: 65px;
+  max-width: 65px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+}

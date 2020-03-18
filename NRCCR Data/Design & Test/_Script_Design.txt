@@ -1,0 +1,32 @@
+Need to rename files from:
+heats 050318 -> heats-20180305
+
+Need to remove some spurious lines
+Need to check dates - some had the wrong dates (admin error on BBK side)
+
+Don't need column Race Name (Race Class has it)
+Don't need column Overall Qual Result Laps (Overall Qual Result Laps has it - actually would be better to keep and drop Laps from the combined field)
+Must remove trailing d from some Lap Times (first lap)
+Must add a date column from the filename i.e. 20180305
+Remove rows with Round or Leg = 0 (only in finals files)
+
+cut -d"," -f1,2,4,6,7,8,9 finals-20180212.csv >>>>
+Name,"Race Class","Overall Qual Result",Result,"Round or Leg","Lap Time","Lap Number"
+"Gary Wilkinson",4wd,"20/  311.17 ","18/  305.97 ",1,"   10.48d",1
+"Gary Wilkinson",4wd,"20/  311.17 ","18/  305.97 ",1,"   15.10",2
+Not sure why some column headers have quotes and others don't and same point but not matching on data rows...
+Need to strip the white space
+Need to split field on Overall Qual Result and call Overall Qual Time and keep column Overall Qual Laps
+Ought to do the same with the result column too i.e. Race Result Time and Race Result Laps
+This seems best:
+cut -d"," -f1,2,4,6,7,8,9 finals-20180212.csv | sed -e 's/d\"\,/\"\,/g' | sed -e 's/\"   /\"/g' | sed -e 's/\/  /-/g' | sed -e 's/\ \"/\"/g' | grep -v "DNS"
+Add the race date to each row (then need to work out how to rename first entry/row to "Race Date")
+cat heats-20180326.csv | sed -e 's/$/\,"20180326"/g' > heats-20180326.csv.x
+need to also change Round or Leg to H1/2/3/4 for Heats and F1/2 for Finals
+
+Then need to run the import into Mongodb
+https://docs.mongodb.com/manual/reference/program/mongoimport/
+mongoimport --db users --collection contacts --type csv --columnsHaveTypes --fields "name.string(),birthdate.date(2006-01-02),contacted.boolean(),followerCount.int32(),user thumbnail.binary(base64)" --file /example/file.csv
+mongoimport --db users --collection contacts --type csv --file /example/data.csv --ignoreBlanks
+
+C:\Users\jamie.a.stewart\Downloads\NRCCR Data>mongoimport --db NCRC --collection Race-Results-Spring-2018 --type csv --headerline --file finals-20180205.csv

@@ -1,0 +1,73 @@
+.lozenge-color {background-color: rgb(66,66,66)}
+.form-group {
+    padding-bottom: 7px;
+    margin: 12px 0 0 0;
+  }
+.card {margin: 25px 0px 12px 0px;}
+.card img {height: 85px !important; width: auto !important;}
+.table {text-align: center; font-size:13px;}
+.text-warning {font-size:13px;}
+
+.championship-table {
+
+    width: 100%;
+
+    td {
+        padding: 6px 6px 6px;
+        text-align: center;
+        column-width: min(24px);
+        font-size: 13px;
+    }
+
+    tr {
+        th {
+            padding: 3px 6px 3px;
+            text-align: center;
+            column-width: min(24px);
+            font-weight:300;
+        }
+    }
+
+    .round {
+        column-width: min(200px);
+    }
+}
+
+.championship-table thead th:nth-child(2) {
+    text-align: left;
+    min-width: 150px;
+    max-width: 150px;
+    //column-width: 100px;
+    font-weight:300;
+}
+.championship-table tbody td:nth-child(2) {
+    text-align: left;
+    white-space: nowrap;
+    min-width: 150px;
+    max-width: 150px;
+    //column-width: 100px;
+}
+
+.championship-table thead th:nth-child(3) {
+    text-align: left;
+}
+
+.championship-table tbody td:nth-child(3) {
+    text-align: center;
+}
+
+.championship-table thead tr:nth-child(odd) {
+    background-color:#474747;
+}
+
+.championship-table thead tr:nth-child(even) {
+    background-color:#474747;
+}
+
+.championship-table tbody tr:nth-child(even) {
+    background-color:#d9bb73;
+}
+
+.championship-table tbody tr:nth-child(odd) {
+    background-color: #f4e79a;
+}

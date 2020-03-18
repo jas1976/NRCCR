@@ -1,0 +1,479 @@
+<div class="container-fluid">
+    <div class="row">
+        <div style="margin-top: 10px">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header lozenge-color">
+                        <h4 class="title">Season Championship Tables
+                        </h4>
+                    </div>
+                    <div class="col-md-4" style="padding-left: 20px; padding-right: 20px; padding-top: 5px;">
+                        <div class="form-group">
+                            <label for="champYearFormControl">Year
+                                <i>(please select)</i>
+                            </label>
+                            <select class="form-control" id="champYearFormControl" (change)="onChampYearSelected($event)" [(ngModel)]="theChampYear"
+                                required>
+                                <option *ngFor="let year of champYears">
+                                    {{ year }}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4" style="padding-left: 20px; padding-right: 20px; padding-top: 5px;">
+                        <div class="form-group">
+                            <label for="champSeasonFormControl">Season
+                                <i>(please select)</i>
+                            </label>
+                            <select class="form-control" id="champSeasonFormControl" (change)="onChampSeasonSelected($event)" [(ngModel)]="theChampSeason"
+                                required>
+                                <option *ngFor="let season of champSeasons">
+                                    {{ season._id }}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--        <div class="col-md-4">
+            <div class="row">
+                <img src="/assets/img/TouringCar.png" />
+                <img src="/assets/img/TamiyaTRF501x.png" />
+                <img src="/assets/img/CougarKC.png" />
+            </div>
+        </div>
+    </div>
+-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card" style="box-shadow: unset; ">
+                                <div class="card-header lozenge-color" style="height: auto; padding-top: 8px; padding-bottom: 9px; margin-left: 16px; margin-right: 16px; margin-bottom: 0px; margin-top: -20px; border-color:transparent">
+                                    <h4 class="title" style="margin-bottom:0px">Season Championship Table - Touring Cars Class
+                                    </h4>
+                                </div>
+
+                                <div class="card-content table-responsive" style="border-color:transparent">
+                                    <table class="championship-table">
+                                        <thead class="table-header; text-warning">
+                                            <tr>
+                                                <th colspan="3"></th>
+                                                <th colspan="12" style="text-align:center">Round</th>
+                                            </tr>
+                                            <tr>
+                                                <th rowspan="2">Pos.</th>
+                                                <th rowspan="2">Name</th>
+                                                <th rowspan="2">Score</th>
+                                                <th>1</th>
+                                                <th>2</th>
+                                                <th>3</th>
+                                                <th>4</th>
+                                                <th>5</th>
+                                                <th>6</th>
+                                                <th>7</th>
+                                                <th>8</th>
+                                                <th>9</th>
+                                                <th>10</th>
+                                                <th>11</th>
+                                                <th>12</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let racer of championshipPointsDataTC | slice:0:4">
+                                                <td style="font-size: 14px; font-weight: 400">
+                                                    {{ racer['Series Position'] }}
+                                                </td>
+                                                <td style="font-size: 14px; font-weight: 400">
+                                                    {{ racer['Driver Name'] }}
+                                                </td>
+                                                <td style="font-size: 14px; font-weight: 400">
+                                                    {{ racer['Series Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R1 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R2 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R3 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R4 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R5 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R6 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R7 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R8 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R9 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R10 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R11 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R12 Points'] }}
+                                                </td>
+                                            </tr>
+                                            <tr [hidden]="!hideElementTC" *ngFor="let racer of championshipPointsDataTC | slice:4:50">
+                                                <td style="font-size: 14px; font-weight: 400">
+                                                    {{ racer['Series Position'] }}
+                                                </td>
+                                                <td style="font-size: 14px; font-weight: 400">
+                                                    {{ racer['Driver Name'] }}
+                                                </td>
+                                                <td style="font-size: 14px; font-weight: 400">
+                                                    {{ racer['Series Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R1 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R2 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R3 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R4 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R5 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R6 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R7 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R8 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R9 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R10 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R11 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R12 Points'] }}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div row>
+                                        <div class="col-md-6">
+                                            <button style="margin-top:5px; margin-left:-15px; margin-bottom:3px" (click)="hideElementTC = !hideElementTC">Toggle full TC table</button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p style="text-align:right; margin-right:-13px; margin-top:7px; font-size:80%">
+                                                <i>After Round 10 on 23rd April 2018</i>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card" style="box-shadow: unset">
+                                <div class="card-header lozenge-color" style="height: auto; padding-top: 8px; padding-bottom: 9px; margin-left: 16px; margin-right: 16px; margin-bottom: 0px; margin-top: -20px">
+                                    <h4 class="title" style="margin-bottom:0px">Season Championship Table - 4wd Buggy Class
+                                    </h4>
+                                </div>
+                                <div class="card-content table-responsive" style="border-color:transparent">
+                                    <table class="championship-table">
+                                        <thead class="table-header; text-warning">
+                                            <tr>
+                                                <th colspan="3"></th>
+                                                <th colspan="12" style="text-align:center;">Round</th>
+                                            </tr>
+                                            <tr>
+                                                <th rowspan="2">Pos.</th>
+                                                <th rowspan="2">Name</th>
+                                                <th rowspan="2">Score</th>
+                                                <th>1</th>
+                                                <th>2</th>
+                                                <th>3</th>
+                                                <th>4</th>
+                                                <th>5</th>
+                                                <th>6</th>
+                                                <th>7</th>
+                                                <th>8</th>
+                                                <th>9</th>
+                                                <th>10</th>
+                                                <th>11</th>
+                                                <th>12</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let racer of championshipPointsData4wd | slice:0:4">
+                                                <td style="font-size: 14px; font-weight: 400">
+                                                    {{ racer['Series Position'] }}
+                                                </td>
+                                                <td style="font-size: 14px; font-weight: 400">
+                                                    {{ racer['Driver Name'] }}
+                                                </td>
+                                                <td style="font-size: 14px; font-weight: 400">
+                                                    {{ racer['Series Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R1 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R2 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R3 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R4 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R5 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R6 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R7 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R8 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R9 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R10 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R11 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R12 Points'] }}
+                                                </td>
+                                            </tr>
+                                            <tr [hidden]="!hideElement4wd" *ngFor="let racer of championshipPointsData4wd | slice:4:50">
+                                                <td style="font-size: 14px; font-weight: 400">
+                                                    {{ racer['Series Position'] }}
+                                                </td>
+                                                <td style="font-size: 14px; font-weight: 400">
+                                                    {{ racer['Driver Name'] }}
+                                                </td>
+                                                <td style="font-size: 14px; font-weight: 400">
+                                                    {{ racer['Series Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R1 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R2 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R3 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R4 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R5 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R6 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R7 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R8 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R9 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R10 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R11 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R12 Points'] }}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div row>
+                                        <div class="col-md-6">
+                                            <button [hidden]="showButton4wd" style="margin-top:5px; margin-left:-15px; margin-bottom:3px" (click)="hideElement4wd = !hideElement4wd">Toggle full 4wd table</button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p style="text-align:right; margin-right:-13px; margin-top:7px; font-size:80%">
+                                                <i>After Round 10 on 23rd April 2018</i>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card" style="box-shadow: unset">
+                                <div class="card-header lozenge-color" style="height: auto; padding-top: 8px; padding-bottom: 9px; margin-left: 16px; margin-right: 16px; margin-bottom: 0px; margin-top: -20px">
+                                    <h4 class="title" style="margin-bottom:0px">Season Championship Table - 2wd Buggy Class
+                                    </h4>
+                                </div>
+                                <div class="card-content table-responsive" style="border-color:transparent">
+                                    <table class="championship-table">
+                                        <thead class="table-header; text-warning">
+                                            <tr>
+                                                <th colspan="3"></th>
+                                                <th colspan="12" style="text-align:center;">Round</th>
+                                            </tr>
+                                            <tr>
+                                                <th rowspan="2">Pos.</th>
+                                                <th rowspan="2">Name</th>
+                                                <th rowspan="2">Score</th>
+                                                <th>1</th>
+                                                <th>2</th>
+                                                <th>3</th>
+                                                <th>4</th>
+                                                <th>5</th>
+                                                <th>6</th>
+                                                <th>7</th>
+                                                <th>8</th>
+                                                <th>9</th>
+                                                <th>10</th>
+                                                <th>11</th>
+                                                <th>12</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let racer of championshipPointsData2wd | slice:0:4">
+                                                <td style="font-size: 14px; font-weight: 400">
+                                                    {{ racer['Series Position'] }}
+                                                </td>
+                                                <td style="font-size: 14px; font-weight: 400">
+                                                    {{ racer['Driver Name'] }}
+                                                </td>
+                                                <td style="font-size: 14px; font-weight: 400">
+                                                    {{ racer['Series Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R1 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R2 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R3 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R4 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R5 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R6 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R7 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R8 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R9 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R10 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R11 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R12 Points'] }}
+                                                </td>
+                                            </tr>
+                                            <tr [hidden]="!hideElement2wd" *ngFor="let racer of championshipPointsData2wd | slice:4:50">
+                                                <td style="font-size: 14px; font-weight: 400">
+                                                    {{ racer['Series Position'] }}
+                                                </td>
+                                                <td style="font-size: 14px; font-weight: 400">
+                                                    {{ racer['Driver Name'] }}
+                                                </td>
+                                                <td style="font-size: 14px; font-weight: 400">
+                                                    {{ racer['Series Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R1 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R2 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R3 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R4 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R5 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R6 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R7 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R8 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R9 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R10 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R11 Points'] }}
+                                                </td>
+                                                <td>
+                                                    {{ racer['R12 Points'] }}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div row>
+                                        <div class="col-md-6">
+                                            <button style="margin-top:5px; margin-left:-15px; margin-bottom:3px" (click)="hideElement2wd = !hideElement2wd">Toggle full 2wd table</button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p style="text-align:right; margin-right:-13px; margin-top:7px; font-size:80%">
+                                                <i>After Round 10 on 23rd April 2018</i>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<button (click)="httpCall()">Click me!</button>-->
+        <!--</div>-->

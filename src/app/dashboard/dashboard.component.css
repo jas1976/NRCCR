@@ -1,0 +1,52 @@
+.lozenge-color {
+  background-color: rgb(66, 66, 66);
+}
+.card-height {
+  max-height: 304px;
+}
+video.bgvid {
+  min-width: 100%;
+  width: 100%;
+  object-fit: fill;
+  z-index: 0;
+  background-color: #000;
+  display: none;
+  top: 20px;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #d9bb73;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #f4e79a;
+}
+
+.TcGenericSizeSmall {
+  width: 125px;
+  height: auto;
+}
+
+@media only screen and (min-width: 600px) {
+  .TcGenericSizeSmall {
+    position: left;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .TcGenericSizeSmall {
+    right: 8px !important;
+  }
+}
+
+.content {
+  position: relative;
+}
+
+.ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: auto;
+}

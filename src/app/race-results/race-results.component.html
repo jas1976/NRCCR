@@ -1,0 +1,76 @@
+<div class="container-fluid">
+    <div class="row">
+        <div style="margin-top: 10px">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header lozenge-color">
+                        <h4 class="title">Race Results Data</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="raceClassFormControl">Class
+                                        <i>(please select)</i>
+                                    </label>
+                                    <select class="form-control" id="raceClassFormControl" (change)="onClassSelected($event)" [(ngModel)]="theClass" required>
+                                        <option value="" disabled selected>Select your option</option>
+                                        <option *ngFor="let class of raceClasses">
+                                            {{ class._id }}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="raceDateFormControl">Week
+                                        <i>(please select)</i>
+                                    </label>
+                                    <select class="form-control" id="raceDateFormControl" (change)="onWeekSelected($event)" [(ngModel)]="theWeek" required>
+                                        <option value="" disabled selected>Select your option</option>
+                                        <option *ngFor="let week of raceWeeks">
+                                            {{ week._id }}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="raceHeatOrFinalFormControl">Race
+                                        <i>(please select)</i>
+                                    </label>
+                                    <select class="form-control" id="raceHeatOrFinalFormControl" (change)="onHeatSelected($event)" [(ngModel)]="theHeat" required>
+                                        <option value="" disabled selected>Select your option</option>
+                                        <option *ngFor="let heat of raceHeats">
+                                            {{ heat._id }}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="height:500px">
+                            <div class="raceChart">
+                                <div class="ct-chart" id="raceDayResultsChart"></div>
+                            </div>
+                        </div>
+                        <div style="margin-left:-14px">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="season">Pick another season
+                                        <i>(please select)</i>
+                                    </label>
+                                    <select class="form-control" id="season" required>
+                                        <option>Spring-18</option>
+                                        <option>Summer-18</option>
+                                        <option>Autumn-18</option>                                        
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
